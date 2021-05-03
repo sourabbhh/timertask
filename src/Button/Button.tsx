@@ -7,5 +7,6 @@ export default function Button({
 }: ButtonProps) {
 	return <button onClick={onClick} className={type}>
 		{type === ButtonType.normal ? label : <img src={process.env.PUBLIC_URL + '/close.svg'} />}
+		{/* if button is normal, text is printed or close image is rendered */}
 		</button>
 }

@@ -14,9 +14,9 @@ export default function Widget({ toggleWidget, changeListItem }: WidgetProps) {
 
 	useEffect(() => {
 		const interval = setInterval(() => {
-			changeTime(time => time + 1);
+			changeTime(time => time + 1);//incrementing at each second.
 		}, 1000);
-		return (() => clearInterval(interval));
+		return (() => clearInterval(interval));//clearing setInterval on component will unmount.
 	}, []);
 
 	function createHandler() {
@@ -24,9 +24,9 @@ export default function Widget({ toggleWidget, changeListItem }: WidgetProps) {
 			return [...ListItem, {
 				title,
 				extended: (timer > (secondsConst * 2)) ? true : false
-			}]
+			}];//adding new task in the list.
 		})
-		toggleWidget(false);
+		toggleWidget(false);//closing widget after adding the item.
 	}
 
 	function inputHandler(e:any){
