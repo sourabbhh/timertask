@@ -1,0 +1,14 @@
+@import './styles/common.scss';
+.list-container{
+  width: 80%;
+  margin: auto;
+  padding: $card-padding;
+  background-color: #324D50;
+}
+.container{
+  background-color: #181E1E;
+  @extend %full-size;
+  height: 100%;
+  min-height: 100vh;
+  @extend %flex-center;
+}
