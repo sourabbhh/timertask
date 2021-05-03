@@ -1,24 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { title } from 'node:process';
+import React, { useState } from 'react';
+import './App.scss';
+import Button from './Button/Button';
+import ListItem from './ListItem/ListItem';
+import { ListItemType } from './ListItem/types';
+import Widget from './Widget/Widget';
 
 function App() {
+  const [widgetOpen, toggleWidget] = useState<boolean>(false);
+  const [listItem, changeListItem] = useState<ListItemType[]>([{
+    title: 'Workout',
+    extended: true
+  }]);
+  function createTask() {
+    toggleWidget((widgetOpen) => !widgetOpen);
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <div className="list-container">
+        <Button label="Create Task" onClick={createTask} />
+        {listItem.map(item => <ListItem title={item.title} extended={item.extended} />)}
+      </div>
+      {widgetOpen && <Widget toggleWidget={toggleWidget} changeListItem={changeListItem}/>}
     </div>
   );
 }

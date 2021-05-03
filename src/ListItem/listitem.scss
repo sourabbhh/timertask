@@ -1,0 +1,12 @@
+@import '../styles/common.scss';
+
+.list-item {
+	margin: $card-padding;
+	padding: $card-padding;
+	width: 80%;
+	height: 20px;
+	background-color: $card-green;
+	&.red{
+		background-color: $card-red;
+	}
+}

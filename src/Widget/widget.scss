@@ -1,0 +1,32 @@
+@import '../styles/common.scss';
+.widget {
+	@extend %full-size;
+	@extend %flex-center;
+	position: absolute;
+	.card {
+		@extend %card-size;
+		@include display-flex(column, space-between);
+		padding: $card-padding;
+		background-color: $card-green;
+		box-shadow: 2px 2px 2px grey;
+		border-radius: 10px;
+		position: absolute;
+		z-index: 10;
+		input{
+			background-color: $input-color;
+			border: none;
+			height: 20px;
+			padding: 5px;
+		}
+		&.red{
+			background-color: $card-red;
+		}
+	}
+	.overlay {
+		position: absolute;
+		top: 0px;
+		bottom: 0px;
+		@extend %full-size;
+		background-color: $overlay-color;
+	}
+}

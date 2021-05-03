@@ -1,0 +1,33 @@
+//extends
+%flex-center{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+%card-size {
+	width: 200px;
+	height: 150px;
+}
+
+%full-size{
+	width: 100vw;
+	height: 100vh;
+}
+
+//mixins
+@mixin display-flex($type, $justify){
+	display: flex;
+	flex-direction: $type;
+	justify-content: $justify;
+}
+
+//colors
+$card-green : #3F6644;
+$card-red : #835452;
+$overlay-color: rgba(0, 0, 0, 0.8);
+$input-color: rgba(255,255,255,.5);
+
+//sizes
+$card-padding: 10px;
+$button-height: 40px;
