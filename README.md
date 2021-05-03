@@ -1,6 +1,8 @@
 # Tasker With Timer:
 Add task to the list with the limited time. Shows red colored card if time exceeds.
 
+![TimerTask Screenshot](screenshot.png "Timer Task Screenshot")
+
 ## Built With
 * [React](https://reactjs.org/)
 * [SCSS](https://sass-lang.com/)
